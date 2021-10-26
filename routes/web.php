@@ -1,6 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 /*
  * |--------------------------------------------------------------------------
@@ -17,11 +19,10 @@ use App\Http\Controllers\IndexController;
 // return view('welcome');
 // });
 
-Route::get('/', [
-    IndexController::class,
-    'index'
-]);
-Route::post('/create', [
-    IndexController::class,
-    'create'
-])->name('testuser.create');
+Route::get('/', [IndexController::class,'index']);
+Route::get('/crear-usuario', [IndexController::class,'createView'])->name('testuser.create-view');
+Route::get('/editar-usuario/{user}', [IndexController::class,'editView'])->name('testuser.edit-view');
+
+Route::post('/create', [IndexController::class, 'create'])->name('testuser.create');
+Route::post('/edit', [IndexController::class, 'edit'])->name('testuser.edit');
+Route::post('/delete', [IndexController::class, 'delete'])->name('testuser.delete');
