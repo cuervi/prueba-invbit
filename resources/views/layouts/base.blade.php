@@ -11,7 +11,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
-    <link href="{{ URL::asset('css/app.css?v='.filemtime('css/app.css')) }}" rel="stylesheet">
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 
@@ -37,7 +37,7 @@
     <!-- ============================================================== -->
     <!-- End Wrapper -->
    	<!-- ============================================================== -->   
-     <script type="text/javascript" src=""></script>
+   	<script src="{{ asset('js/app.js') }}" defer></script>
    	
     @yield('scripts')
 </body>
