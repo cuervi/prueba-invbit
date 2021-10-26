@@ -1,14 +1,15 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreateTableTestUsers extends Migration
 {
+
     /**
      * Run the migrations.
-     *nota media
+     * nota media
+     *
      * @return void
      */
     public function up()

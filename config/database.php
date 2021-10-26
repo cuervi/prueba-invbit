@@ -1,19 +1,18 @@
 <?php
-
 use Illuminate\Support\Str;
 
 return [
 
     /*
-    |--------------------------------------------------------------------------
-    | Default Database Connection Name
-    |--------------------------------------------------------------------------
-    |
-    | Here you may specify which of the database connections below you wish
-    | to use as your default connection for all database work. Of course
-    | you may use many connections at once using the Database library.
-    |
-    */
+     * |--------------------------------------------------------------------------
+     * | Default Database Connection Name
+     * |--------------------------------------------------------------------------
+     * |
+     * | Here you may specify which of the database connections below you wish
+     * | to use as your default connection for all database work. Of course
+     * | you may use many connections at once using the Database library.
+     * |
+     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
 
@@ -40,7 +39,7 @@ return [
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true)
         ],
 
         'mysql' => [
@@ -59,8 +58,8 @@ return [
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
-                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-            ]) : [],
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA')
+            ]) : []
         ],
 
         'pgsql' => [
@@ -75,7 +74,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
-            'sslmode' => 'prefer',
+            'sslmode' => 'prefer'
         ],
 
         'sqlsrv' => [
@@ -88,9 +87,8 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
-        ],
-
+            'prefix_indexes' => true
+        ]
     ],
 
     /*
@@ -123,7 +121,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_')
         ],
 
         'default' => [
@@ -131,7 +129,7 @@ return [
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_DB', '0'),
+            'database' => env('REDIS_DB', '0')
         ],
 
         'cache' => [
@@ -139,9 +137,7 @@ return [
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', '6379'),
-            'database' => env('REDIS_CACHE_DB', '1'),
-        ],
-
-    ],
-
+            'database' => env('REDIS_CACHE_DB', '1')
+        ]
+    ]
 ];

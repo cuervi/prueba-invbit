@@ -19,3 +19,4 @@ use App\Http\Controllers\IndexController;
 // });
 
 Route::get('/', [IndexController::class, 'index']);
+Route::post('/create', [IndexController::class, 'create'])->name('testuser.create');
